@@ -121,6 +121,7 @@
 		A4D59D69271E2FF50074578F /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				A493986F271F2441003425A8 /* Controller */,
 				A4D59D6C271E31260074578F /* Screen */,
 			);
 			path = Register;
@@ -129,7 +130,6 @@
 		A4D59D6C271E31260074578F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				A493986F271F2441003425A8 /* Controller */,
 				A4D59D6E271E31540074578F /* RegisterScreen.swift */,
 			);
 			path = Screen;
