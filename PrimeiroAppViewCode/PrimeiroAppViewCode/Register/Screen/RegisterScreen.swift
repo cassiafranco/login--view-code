@@ -15,14 +15,6 @@ class RegisterScreen: UIView {
         self.delegate = delegate
     }
     //MARK: - Create elements
-    lazy var backButton: UIButton = {
-        let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(UIImage(named: "back"), for: .normal)
-        view.addTarget(self, action: #selector(tappedBackButton) , for: .touchUpInside)
-        return view
-        
-    }()
     lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +74,6 @@ class RegisterScreen: UIView {
     }
     //MARK: - SubViews
     private func getUpSubViews(){
-        self.addSubview(self.backButton)
         self.addSubview(self.imageView)
         self.addSubview(self.textFielEmail)
         self.addSubview(self.textFielPassword)
@@ -98,9 +89,6 @@ class RegisterScreen: UIView {
     //MARK: - Actions of Buttons
     @objc func tappedButtonRegister() {
         self.delegate?.actionRegisterButton()
-    }
-    @objc func tappedBackButton() {
-        self.delegate?.backPage()
         
     }
     
@@ -122,11 +110,6 @@ class RegisterScreen: UIView {
             self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.imageView.widthAnchor.constraint(equalToConstant: 150),
             self.imageView.heightAnchor.constraint(equalToConstant: 150),
-            
-            self.backButton.topAnchor.constraint(equalTo: self.imageView.topAnchor),
-            self.backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(20)),
-            self.backButton.heightAnchor.constraint(equalToConstant: CGFloat(20)),
-            self.backButton.widthAnchor.constraint(equalToConstant: CGFloat(20)),
             
             self.textFielEmail.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: constant),
             self.textFielEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(30)),

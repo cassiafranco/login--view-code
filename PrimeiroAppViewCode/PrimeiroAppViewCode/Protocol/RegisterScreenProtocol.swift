@@ -9,5 +9,4 @@
 protocol RegisterScreenProtocol: class{
     
     func actionRegisterButton()
-    func backPage()
 }
