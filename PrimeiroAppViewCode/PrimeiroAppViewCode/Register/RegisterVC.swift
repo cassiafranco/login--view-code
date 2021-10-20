@@ -41,8 +41,3 @@ extension RegisterVC: UITextFieldDelegate {
     
 }
 
-/*
-
-
-
-*/

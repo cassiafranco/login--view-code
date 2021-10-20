@@ -125,8 +125,7 @@ class LoginScreen: UIView {
     // setando um valor fixo para o determinado elemento.
     
     private func setUpConstraints() {
-        
-        //MARK: Create constant
+    
         let constant: CGFloat = 15
         
         NSLayoutConstraint.activate([

@@ -17,6 +17,10 @@
 		A4D59D6B271E31180074578F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D59D6A271E31180074578F /* RegisterVC.swift */; };
 		A4D59D6F271E31540074578F /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D59D6E271E31540074578F /* RegisterScreen.swift */; };
 		A4D59D71271E33370074578F /* RegisterScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D59D70271E33370074578F /* RegisterScreenProtocol.swift */; };
+		A4D86F8C2720588600633CBD /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F8B2720588600633CBD /* UserDetailVC.swift */; };
+		A4D86F8F2720594700633CBD /* UserDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F8E2720594700633CBD /* UserDetailScreen.swift */; };
+		A4D86F922720612200633CBD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F912720612200633CBD /* UserDetailTableViewCell.swift */; };
+		A4D86F95272065F000633CBD /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F94272065F000633CBD /* UserDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		A4D59D6A271E31180074578F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A4D59D6E271E31540074578F /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		A4D59D70271E33370074578F /* RegisterScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenProtocol.swift; sourceTree = "<group>"; };
+		A4D86F8B2720588600633CBD /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		A4D86F8E2720594700633CBD /* UserDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailScreen.swift; sourceTree = "<group>"; };
+		A4D86F912720612200633CBD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A4D86F94272065F000633CBD /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		A407F305271B8D2C00F87D84 /* PrimeiroAppViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				A4D86F89272056B500633CBD /* UserDetail */,
 				A4D59D67271E282A0074578F /* Protocol */,
 				A4D59D69271E2FF50074578F /* Register */,
 				A407F31A271B942C00F87D84 /* Login */,
@@ -79,8 +88,8 @@
 		A407F31A271B942C00F87D84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A4D59D68271E28490074578F /* Controller */,
 				A407F31B271B94E500F87D84 /* Screen */,
+				A407F30A271B8D2C00F87D84 /* LoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -93,14 +102,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		A493986F271F2441003425A8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A4D59D6A271E31180074578F /* RegisterVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		A4D59D67271E282A0074578F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,19 +111,11 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		A4D59D68271E28490074578F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A407F30A271B8D2C00F87D84 /* LoginVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		A4D59D69271E2FF50074578F /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				A493986F271F2441003425A8 /* Controller */,
 				A4D59D6C271E31260074578F /* Screen */,
+				A4D59D6A271E31180074578F /* RegisterVC.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -133,6 +126,49 @@
 				A4D59D6E271E31540074578F /* RegisterScreen.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		A4D86F89272056B500633CBD /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A4D86F90272060E400633CBD /* Cell */,
+				A4D86F8D2720592900633CBD /* Screen */,
+				A4D86F8A272056EC00633CBD /* Controller */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		A4D86F8A272056EC00633CBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4D86F8B2720588600633CBD /* UserDetailVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4D86F8D2720592900633CBD /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A4D86F8E2720594700633CBD /* UserDetailScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		A4D86F90272060E400633CBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4D86F93272065D200633CBD /* CustomView */,
+				A4D86F912720612200633CBD /* UserDetailTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4D86F93272065D200633CBD /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				A4D86F94272065F000633CBD /* UserDetailView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,11 +241,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A407F30B271B8D2C00F87D84 /* LoginVC.swift in Sources */,
+				A4D86F922720612200633CBD /* UserDetailTableViewCell.swift in Sources */,
 				A407F31D271B966A00F87D84 /* LoginScreen.swift in Sources */,
 				A407F307271B8D2C00F87D84 /* AppDelegate.swift in Sources */,
+				A4D86F95272065F000633CBD /* UserDetailView.swift in Sources */,
 				A4D59D6F271E31540074578F /* RegisterScreen.swift in Sources */,
+				A4D86F8C2720588600633CBD /* UserDetailVC.swift in Sources */,
 				A4D59D6B271E31180074578F /* RegisterVC.swift in Sources */,
 				A407F309271B8D2C00F87D84 /* SceneDelegate.swift in Sources */,
+				A4D86F8F2720594700633CBD /* UserDetailScreen.swift in Sources */,
 				A4D59D71271E33370074578F /* RegisterScreenProtocol.swift in Sources */,
 				A4D59D66271E27C70074578F /* LoginScreenProtocol.swift in Sources */,
 			);

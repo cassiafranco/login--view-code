@@ -30,6 +30,8 @@ class LoginVC: UIViewController {
 }
 extension LoginVC: LoginScreenProtocol{
     func actionLoginButton() {
+        let userDetail = UserDetailVC()
+        self.navigationController?.pushViewController(userDetail, animated: true)
     }
     
     func actionRegisterButton() {
