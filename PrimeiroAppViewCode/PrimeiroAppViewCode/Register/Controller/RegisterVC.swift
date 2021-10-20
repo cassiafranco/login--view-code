@@ -27,19 +27,16 @@ class RegisterVC: UIViewController{
 }
 extension RegisterVC: RegisterScreenProtocol{
     func backPage() {
-        let back = LoginVC()
-        self.navigationController?.pushViewController(back, animated: true)
-        print("Volar a pagina login")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func actionRegisterButton() {
-        print("Botao selecionado")
+        
     }
 
 }
 extension RegisterVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing")
     }
     
 }

@@ -30,11 +30,9 @@ class LoginVC: UIViewController {
 }
 extension LoginVC: LoginScreenProtocol{
     func actionLoginButton() {
-        print("Pressionei o Login")
     }
     
     func actionRegisterButton() {
-        print("Ir para a pagina Register")
         let register = RegisterVC()
         self.navigationController?.pushViewController(register, animated: true)
     }
@@ -42,13 +40,10 @@ extension LoginVC: LoginScreenProtocol{
 }
 extension LoginVC: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing")
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("textFieldDidEndEditing")
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
         textField.resignFirstResponder()
         
         return true
