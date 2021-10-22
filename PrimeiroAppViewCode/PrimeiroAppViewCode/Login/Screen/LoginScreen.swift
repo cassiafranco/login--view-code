@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class LoginScreen: UIView {
     
@@ -79,7 +80,6 @@ class LoginScreen: UIView {
         super.init(frame: frame)
         self.customColor()
         self.setUpSubViews()
-        self.setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -112,6 +112,34 @@ class LoginScreen: UIView {
         self.textFieldPassword.delegate = delegate
         
     }
+    //MARK: - SnapKit
+    func configConstraintslogoAppImageView() {
+        self.logoAppImageView.snp.makeConstraints{ (make) in
+        }
+    }
+    
+    func configTextFieldEmail() {
+        self.textFieldEmail.snp.makeConstraints{ (make) in
+            
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(20)
+        }
+    }
+    func configTextFieldPassword() {
+        self.textFieldPassword.snp.makeConstraints{ (make) in
+            
+        }
+    }
+    func configLoginButton() {
+        self.loginButton.snp.makeConstraints{ (make) in
+            
+        }
+    }
+    func configRegisterButton() {
+        self.registerButton.snp.makeConstraints{ (make) in
+            
+        }
+    }
     
     //MARK: - Method SetupConstraints
     
@@ -124,49 +152,49 @@ class LoginScreen: UIView {
     //equalToConstant:
     // setando um valor fixo para o determinado elemento.
     
-    private func setUpConstraints() {
-    
-        let constant: CGFloat = 15
-        
-        NSLayoutConstraint.activate([
-            
-            
-            //MARK: - Constraints ImageView
-            self.logoAppImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: CGFloat(20)),
-            self.logoAppImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(60)),
-            self.logoAppImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: CGFloat(-60)),
-            self.logoAppImageView.heightAnchor.constraint(equalToConstant: CGFloat(150)),
-            
-            // MARK: - Constraints Label
-            //            self.loginLabel.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor, constant: CGFloat(-100)),
-            //            self.loginLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(10)),
-            //            self.loginLabel.trailingAnchor.constraint(equalTo: self.loginTextField.leadingAnchor, constant: CGFloat(-10)),
-            //            self.loginLabel.heightAnchor.constraint(equalToConstant: CGFloat(40)),
-            
-            //MARK: Constraints Text Fiel Email
-            self.textFieldEmail.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor, constant: constant),
-            self.textFieldEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(30)),
-            self.textFieldEmail.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: CGFloat(-30)),
-            self.textFieldEmail.heightAnchor.constraint(equalToConstant: CGFloat(45)),
-            
-            //MARK: Constraints Text Field Name
-            self.textFieldPassword.topAnchor.constraint(equalTo: self.textFieldEmail.bottomAnchor, constant: constant),
-            self.textFieldPassword.leadingAnchor.constraint(equalTo: self.textFieldEmail.leadingAnchor),
-            self.textFieldPassword.trailingAnchor.constraint(equalTo: self.textFieldEmail.trailingAnchor),
-            self.textFieldPassword.heightAnchor.constraint(equalTo: self.textFieldEmail.heightAnchor),
-            
-            //MARK: Contraints Button
-            self.loginButton.topAnchor.constraint(equalTo: self.textFieldPassword.bottomAnchor, constant: constant),
-            self.loginButton.leadingAnchor.constraint(equalTo: self.textFieldPassword.leadingAnchor),
-            self.loginButton.trailingAnchor.constraint(equalTo: self.textFieldPassword.trailingAnchor),
-            self.loginButton.heightAnchor.constraint(equalTo: self.textFieldPassword.heightAnchor),
-            
-            //MARK: Constraints Button Register
-            self.registerButton.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: constant),
-            self.registerButton.leadingAnchor.constraint(equalTo: self.loginButton.leadingAnchor),
-            self.registerButton.trailingAnchor.constraint(equalTo: self.loginButton.trailingAnchor),
-            self.registerButton.heightAnchor.constraint(equalTo: self.loginButton.heightAnchor),
-            
-        ])
-    }
+//    private func setUpConstraints() {
+//
+//        let constant: CGFloat = 15
+//
+//        NSLayoutConstraint.activate([
+//
+//
+//            //MARK: - Constraints ImageView
+//            self.logoAppImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: CGFloat(20)),
+//            self.logoAppImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(60)),
+//            self.logoAppImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: CGFloat(-60)),
+//            self.logoAppImageView.heightAnchor.constraint(equalToConstant: CGFloat(150)),
+//
+//            // MARK: - Constraints Label
+//            //            self.loginLabel.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor, constant: CGFloat(-100)),
+//            //            self.loginLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(10)),
+//            //            self.loginLabel.trailingAnchor.constraint(equalTo: self.loginTextField.leadingAnchor, constant: CGFloat(-10)),
+//            //            self.loginLabel.heightAnchor.constraint(equalToConstant: CGFloat(40)),
+//
+//            //MARK: Constraints Text Field Email
+//            self.textFieldEmail.topAnchor.constraint(equalTo: self.logoAppImageView.bottomAnchor, constant: constant),
+//            self.textFieldEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(30)),
+//            self.textFieldEmail.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: CGFloat(-30)),
+//            self.textFieldEmail.heightAnchor.constraint(equalToConstant: CGFloat(45)),
+//
+//            //MARK: Constraints Text Field Email
+//            self.textFieldPassword.topAnchor.constraint(equalTo: self.textFieldEmail.bottomAnchor, constant: constant),
+//            self.textFieldPassword.leadingAnchor.constraint(equalTo: self.textFieldEmail.leadingAnchor),
+//            self.textFieldPassword.trailingAnchor.constraint(equalTo: self.textFieldEmail.trailingAnchor),
+//            self.textFieldPassword.heightAnchor.constraint(equalTo: self.textFieldEmail.heightAnchor),
+//
+//            //MARK: Contraints Button
+//            self.loginButton.topAnchor.constraint(equalTo: self.textFieldPassword.bottomAnchor, constant: constant),
+//            self.loginButton.leadingAnchor.constraint(equalTo: self.textFieldPassword.leadingAnchor),
+//            self.loginButton.trailingAnchor.constraint(equalTo: self.textFieldPassword.trailingAnchor),
+//            self.loginButton.heightAnchor.constraint(equalTo: self.textFieldPassword.heightAnchor),
+//
+//            //MARK: Constraints Button Register
+//            self.registerButton.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: constant),
+//            self.registerButton.leadingAnchor.constraint(equalTo: self.loginButton.leadingAnchor),
+//            self.registerButton.trailingAnchor.constraint(equalTo: self.loginButton.trailingAnchor),
+//            self.registerButton.heightAnchor.constraint(equalTo: self.loginButton.heightAnchor),
+//
+//        ])
+//    }
 }
