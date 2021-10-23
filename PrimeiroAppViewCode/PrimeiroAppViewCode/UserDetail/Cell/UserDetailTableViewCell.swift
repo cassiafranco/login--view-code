@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailTableViewCell: UITableViewCell {
     
@@ -24,7 +25,7 @@ class UserDetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(descriptionCell)
-        self.setUpConstraints()
+        self.configDescriptionCellConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -34,14 +35,9 @@ class UserDetailTableViewCell: UITableViewCell {
         self.descriptionCell.configNameLabel(name: name)
     }
     
-    private func setUpConstraints(){
-        
-        NSLayoutConstraint.activate([
-            self.descriptionCell.topAnchor.constraint(equalTo: self.topAnchor),
-            self.descriptionCell.leftAnchor.constraint(equalTo: self.leftAnchor),
-            self.descriptionCell.rightAnchor.constraint(equalTo: self.rightAnchor),
-            self.descriptionCell.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+    func configDescriptionCellConstraint(){
+        self.descriptionCell.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
     }
-    
 }

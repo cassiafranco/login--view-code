@@ -121,6 +121,8 @@ class LoginScreen: UIView {
         
     }
     //MARK: - SnapKit
+    //inset = valor negativo
+    //offset = valor positivo
     
     func configConstraintslogoAppImageView() {
         self.logoAppImageView.snp.makeConstraints{ (make) in
@@ -135,7 +137,7 @@ class LoginScreen: UIView {
         self.textFieldEmail.snp.makeConstraints{ (make) in
             make.top.equalTo(self.logoAppImageView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(45)
         }
     }

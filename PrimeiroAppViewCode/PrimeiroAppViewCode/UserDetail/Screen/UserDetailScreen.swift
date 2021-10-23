@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailScreen: UIView {
     
@@ -22,8 +23,8 @@ class UserDetailScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.tableSubViews()
-        self.setUpConstraints()
         self.customColor()
+        self.configTableViewContraint()
         
     }
     
@@ -47,17 +48,11 @@ class UserDetailScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Method Constraints
-    private func setUpConstraints(){
-        NSLayoutConstraint.activate([
+    //MARK: - SnapKit
+    func configTableViewContraint(){
+        self.tableView.snp.makeConstraints{ (make) in
+            make.edges.equalTo(self.safeAreaLayoutGuide)
             
-            self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            self.tableView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
-            self.tableView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-            
-            
-        ])
+        }
     }
-    
 }

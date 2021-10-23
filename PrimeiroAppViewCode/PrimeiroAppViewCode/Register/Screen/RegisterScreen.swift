@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class RegisterScreen: UIView {
     
@@ -66,7 +67,12 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         self.getUpSubViews()
         self.customColor()
-        self.setUpConstraints()
+        //-------------------------
+        self.configImage()
+        self.configEmail()
+        self.configPassword()
+        self.configRegister()
+        //-------------------------
     }
     
     required init?(coder: NSCoder) {
@@ -100,34 +106,40 @@ class RegisterScreen: UIView {
         
     }
     
-    //MARK: SetUpConstraints
-    private func setUpConstraints() {
-        
-        let constant: CGFloat = 15
-        NSLayoutConstraint.activate([
-            
-            self.imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: CGFloat(20)),
-            self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.imageView.widthAnchor.constraint(equalToConstant: 150),
-            self.imageView.heightAnchor.constraint(equalToConstant: 150),
-            
-            self.textFielEmail.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: constant),
-            self.textFielEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CGFloat(30)),
-            self.textFielEmail.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: CGFloat(-30)),
-            self.textFielEmail.heightAnchor.constraint(equalToConstant: CGFloat(45)),
-            
-            self.textFielPassword.topAnchor.constraint(equalTo: self.textFielEmail.bottomAnchor, constant: constant),
-            self.textFielPassword.leadingAnchor.constraint(equalTo: self.textFielEmail.leadingAnchor),
-            self.textFielPassword.trailingAnchor.constraint(equalTo: self.textFielEmail.trailingAnchor),
-            self.textFielPassword.heightAnchor.constraint(equalTo: self.textFielEmail.heightAnchor),
-            
-            self.registerButton.topAnchor.constraint(equalTo: self.textFielPassword.bottomAnchor, constant: constant),
-            self.registerButton.leadingAnchor.constraint(equalTo: self.textFielPassword.leadingAnchor),
-            self.registerButton.trailingAnchor.constraint(equalTo: self.textFielPassword.trailingAnchor),
-            self.registerButton.heightAnchor.constraint(equalTo: self.textFielPassword.heightAnchor)
-            
-            
-        ])
-        
+    //MARK: - SetUpConstraints
+
+    func configImage() {
+        self.imageView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(150)
+        }
     }
+    func configEmail() {
+        self.textFielEmail.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.imageView.snp.bottom).offset(15)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(45)
+            
+        }
+    }
+    func configPassword() {
+        self.textFielPassword.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.textFielEmail.snp.bottom).offset(15)
+            make.leading.equalTo(self.textFielEmail.snp.leading)
+            make.trailing.equalTo(self.textFielEmail.snp.trailing)
+            make.height.equalTo(self.textFielEmail.snp.height)
+        }
+    }
+    func configRegister() {
+        self.registerButton.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.textFielPassword.snp.bottom).offset(20)
+            make.leading.equalTo(self.textFielPassword.snp.leading)
+            make.trailing.equalTo(self.textFielPassword.snp.trailing)
+            make.height.equalTo(self.textFielPassword.snp.height)
+            
+        }
+    }
+
 }

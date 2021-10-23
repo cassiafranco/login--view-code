@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailView: UIView {
     
@@ -26,7 +27,8 @@ class UserDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.detailSubviews()
-        self.setUpContraints()
+        self.configUserImageConstraint()
+        self.configNameLabelConstraint()
     }
     
     public func configNameLabel(name: String) {
@@ -39,20 +41,18 @@ class UserDetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK: - setUpContraints
+    //MARK: - SnapKit
     
-    private func setUpContraints(){
-        NSLayoutConstraint.activate([
-            self.userImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.userImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.userImageView.heightAnchor.constraint(equalToConstant: CGFloat(80)),
-            self.userImageView.widthAnchor.constraint(equalToConstant: CGFloat(80)),
-            
-            self.nameLabel.topAnchor.constraint(equalTo: self.userImageView.topAnchor),
-            self.nameLabel.leftAnchor.constraint(equalTo: self.userImageView.rightAnchor, constant: CGFloat(20)),
-        
-        ])
+    func configUserImageConstraint(){
+        self.userImageView.snp.makeConstraints{ (make) in
+            make.centerY.leading.equalToSuperview()
+            make.height.width.equalTo(80)
+        }
     }
-    
-    
+    func configNameLabelConstraint(){
+        self.nameLabel.snp.makeConstraints{ (make) in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(self.userImageView.snp.trailing).offset(20)
+        }
+    }
 }
