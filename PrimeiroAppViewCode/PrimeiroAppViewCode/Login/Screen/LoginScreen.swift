@@ -80,6 +80,14 @@ class LoginScreen: UIView {
         super.init(frame: frame)
         self.customColor()
         self.setUpSubViews()
+        
+        //------------------##--------------------
+        self.configConstraintslogoAppImageView()
+        self.configTextFieldEmail()
+        self.configTextFieldPassword()
+        self.configLoginButton()
+        self.configRegisterButton()
+        //------------------##--------------------
     }
     
     required init?(coder: NSCoder) {
@@ -113,33 +121,51 @@ class LoginScreen: UIView {
         
     }
     //MARK: - SnapKit
+    
     func configConstraintslogoAppImageView() {
         self.logoAppImageView.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(150)
         }
     }
+
     
     func configTextFieldEmail() {
         self.textFieldEmail.snp.makeConstraints{ (make) in
-            
+            make.top.equalTo(self.logoAppImageView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(45)
         }
     }
     func configTextFieldPassword() {
         self.textFieldPassword.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.textFieldEmail.snp.bottom).offset(15)
+            make.leading.equalTo(self.textFieldEmail.snp.leading)
+            make.trailing.equalTo(self.textFieldEmail.snp.trailing)
+            make.height.equalTo(self.textFieldEmail.snp.height)
             
         }
     }
     func configLoginButton() {
         self.loginButton.snp.makeConstraints{ (make) in
-            
+            make.top.equalTo(self.textFieldPassword.snp.bottom).offset(15)
+            make.leading.equalTo(self.textFieldPassword.snp.leading)
+            make.trailing.equalTo(self.textFieldPassword.snp.trailing)
+            make.height.equalTo(self.textFieldPassword.snp.height)
         }
     }
     func configRegisterButton() {
         self.registerButton.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.loginButton.snp.bottom).offset(15)
+            make.leading.equalTo(self.loginButton.snp.leading)
+            make.trailing.equalTo(self.loginButton.snp.trailing)
+            make.height.equalTo(self.loginButton.snp.height)
             
         }
     }
+    
     
     //MARK: - Method SetupConstraints
     

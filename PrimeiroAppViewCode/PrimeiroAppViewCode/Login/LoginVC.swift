@@ -26,7 +26,7 @@ class LoginVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Welcome"
         self.navigationItem.backButtonTitle = "Voltar"
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
 }
