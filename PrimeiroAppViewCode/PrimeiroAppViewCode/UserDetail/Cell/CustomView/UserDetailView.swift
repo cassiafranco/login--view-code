@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class UserDetailView: UIView {
-    
+    //MARK: - Create elements
     lazy var userImageView:UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -24,11 +24,12 @@ class UserDetailView: UIView {
         return view
         
     }()
+    //MARK: - Super view construction
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.detailSubviews()
-        self.configUserImageConstraint()
-        self.configNameLabelConstraint()
+        self.configUserImageConstraints()
+        self.configNameLabelConstraints()
     }
     
     public func configNameLabel(name: String) {
@@ -42,14 +43,13 @@ class UserDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     //MARK: - SnapKit
-    
-    func configUserImageConstraint(){
+    func configUserImageConstraints(){
         self.userImageView.snp.makeConstraints{ (make) in
             make.centerY.leading.equalToSuperview()
             make.height.width.equalTo(80)
         }
     }
-    func configNameLabelConstraint(){
+    func configNameLabelConstraints(){
         self.nameLabel.snp.makeConstraints{ (make) in
             make.centerY.equalToSuperview()
             make.leading.equalTo(self.userImageView.snp.trailing).offset(20)

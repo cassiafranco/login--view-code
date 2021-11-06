@@ -18,7 +18,6 @@ class LoginVC: UIViewController {
         self.view = self.loginScren
         
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -23,20 +23,13 @@ class UserDetailScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.tableSubViews()
-        self.customColor()
-        self.configTableViewContraint()
+        self.backgroundColor = UIColor.greenBackground()
+        self.configTableViewContraints()
         
     }
     
     private func tableSubViews() {
         self.addSubview(self.tableView)
-        
-    }
-    //MARK: - Method SetupColor
-    private func customColor(){
-        // .greenBackGround
-        self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/244, alpha: 1.0)
-        
     }
     //MARK: - Config Table Delegate
     public func configTableViewDelegate(delegate:UITableViewDelegate, dataSource:UITableViewDataSource){
@@ -49,7 +42,7 @@ class UserDetailScreen: UIView {
     }
     
     //MARK: - SnapKit
-    func configTableViewContraint(){
+    func configTableViewContraints(){
         self.tableView.snp.makeConstraints{ (make) in
             make.edges.equalTo(self.safeAreaLayoutGuide)
             

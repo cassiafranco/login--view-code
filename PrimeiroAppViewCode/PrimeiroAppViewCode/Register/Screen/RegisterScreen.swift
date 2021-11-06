@@ -61,17 +61,17 @@ class RegisterScreen: UIView {
         view.addTarget(self, action: #selector(tappedButtonRegister), for: .touchUpInside)
         return view
     }()
-    
+
     //MARK: - Super View Construction
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.getUpSubViews()
-        self.customColor()
+        self.backgroundColor = UIColor.greenBackground()
         //-------------------------
-        self.configImage()
-        self.configEmail()
-        self.configPassword()
-        self.configRegister()
+        self.configImageConstraints()
+        self.configEmailConstraints()
+        self.configPasswordConstraints()
+        self.configRegisterConstraints()
         //-------------------------
     }
     
@@ -84,12 +84,6 @@ class RegisterScreen: UIView {
         self.addSubview(self.textFielEmail)
         self.addSubview(self.textFielPassword)
         self.addSubview(self.registerButton)
-        
-    }
-    //MARK: - Method SetupColor
-    private func customColor(){
-        // .greenBackGround
-        self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/244, alpha: 1.0)
         
     }
     //MARK: - Actions of Buttons
@@ -106,25 +100,23 @@ class RegisterScreen: UIView {
         
     }
     
-    //MARK: - SetUpConstraints
-
-    func configImage() {
+    //MARK: - SnapKit
+    private func configImageConstraints() {
         self.imageView.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
             make.height.width.equalTo(150)
         }
     }
-    func configEmail() {
+    func configEmailConstraints(){
         self.textFielEmail.snp.makeConstraints{ (make) in
             make.top.equalTo(self.imageView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(45)
-            
         }
     }
-    func configPassword() {
+    func configPasswordConstraints() {
         self.textFielPassword.snp.makeConstraints{ (make) in
             make.top.equalTo(self.textFielEmail.snp.bottom).offset(15)
             make.leading.equalTo(self.textFielEmail.snp.leading)
@@ -132,13 +124,13 @@ class RegisterScreen: UIView {
             make.height.equalTo(self.textFielEmail.snp.height)
         }
     }
-    func configRegister() {
+    func configRegisterConstraints() {
         self.registerButton.snp.makeConstraints{ (make) in
             make.top.equalTo(self.textFielPassword.snp.bottom).offset(20)
             make.leading.equalTo(self.textFielPassword.snp.leading)
             make.trailing.equalTo(self.textFielPassword.snp.trailing)
             make.height.equalTo(self.textFielPassword.snp.height)
-            
+
         }
     }
 

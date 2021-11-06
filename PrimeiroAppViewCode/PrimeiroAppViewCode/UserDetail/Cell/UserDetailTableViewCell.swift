@@ -25,7 +25,7 @@ class UserDetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(descriptionCell)
-        self.configDescriptionCellConstraint()
+        self.configDescriptionCellConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -34,8 +34,8 @@ class UserDetailTableViewCell: UITableViewCell {
     public func setupCell(name: String){
         self.descriptionCell.configNameLabel(name: name)
     }
-    
-    func configDescriptionCellConstraint(){
+    //MARK: - Snapkit
+    func configDescriptionCellConstraints(){
         self.descriptionCell.snp.makeConstraints{ (make) in
             make.edges.equalToSuperview()
         }

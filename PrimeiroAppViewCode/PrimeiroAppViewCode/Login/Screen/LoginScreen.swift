@@ -78,15 +78,15 @@ class LoginScreen: UIView {
     //MARK: - Super View Construction
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.customColor()
+        self.backgroundColor = UIColor.greenBackground()
         self.setUpSubViews()
         
         //------------------##--------------------
-        self.configConstraintslogoAppImageView()
-        self.configTextFieldEmail()
-        self.configTextFieldPassword()
-        self.configLoginButton()
-        self.configRegisterButton()
+        self.configlogoAppImageViewConstraints()
+        self.configTextFieldEmailConstraints()
+        self.configTextFieldPasswordConstraints()
+        self.configLoginButtonConstraints()
+        self.configRegisterButtonConstraints()
         //------------------##--------------------
     }
     
@@ -99,12 +99,6 @@ class LoginScreen: UIView {
         self.addSubview(self.textFieldEmail)
         self.addSubview(self.loginButton)
         self.addSubview(self.registerButton)
-    }
-    //MARK: - Method SetupColor
-    private func customColor(){
-        // .greenBackGround
-        self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/244, alpha: 1.0)
-        
     }
     //MARK: Action of Buttons
     @objc private func tappedLoginButton(){
@@ -124,7 +118,7 @@ class LoginScreen: UIView {
     //inset = valor negativo
     //offset = valor positivo
     
-    func configConstraintslogoAppImageView() {
+    func configlogoAppImageViewConstraints() {
         self.logoAppImageView.snp.makeConstraints{ (make) in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.equalToSuperview()
@@ -133,7 +127,7 @@ class LoginScreen: UIView {
     }
 
     
-    func configTextFieldEmail() {
+    func configTextFieldEmailConstraints() {
         self.textFieldEmail.snp.makeConstraints{ (make) in
             make.top.equalTo(self.logoAppImageView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
@@ -141,7 +135,7 @@ class LoginScreen: UIView {
             make.height.equalTo(45)
         }
     }
-    func configTextFieldPassword() {
+    func configTextFieldPasswordConstraints() {
         self.textFieldPassword.snp.makeConstraints{ (make) in
             make.top.equalTo(self.textFieldEmail.snp.bottom).offset(15)
             make.leading.equalTo(self.textFieldEmail.snp.leading)
@@ -150,7 +144,7 @@ class LoginScreen: UIView {
             
         }
     }
-    func configLoginButton() {
+    func configLoginButtonConstraints() {
         self.loginButton.snp.makeConstraints{ (make) in
             make.top.equalTo(self.textFieldPassword.snp.bottom).offset(15)
             make.leading.equalTo(self.textFieldPassword.snp.leading)
@@ -158,7 +152,7 @@ class LoginScreen: UIView {
             make.height.equalTo(self.textFieldPassword.snp.height)
         }
     }
-    func configRegisterButton() {
+    func configRegisterButtonConstraints() {
         self.registerButton.snp.makeConstraints{ (make) in
             make.top.equalTo(self.loginButton.snp.bottom).offset(15)
             make.leading.equalTo(self.loginButton.snp.leading)
