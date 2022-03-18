@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
     
     var loginScren: LoginScreen?
+    var auth: Auth?
     
     override func loadView() {
         self.loginScren = LoginScreen()
@@ -20,6 +22,7 @@ class LoginVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.auth = Auth.auth()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,8 +43,22 @@ class LoginVC: UIViewController {
 }
 extension LoginVC: LoginScreenProtocol{
     func actionLoginButton() {
-        let userDetail = UserDetailVC()
-        self.navigationController?.pushViewController(userDetail, animated: true)
+        
+        guard let login = self.loginScren else { return }
+        
+        self.auth?.signIn(withEmail: login.getEmail(), password: login.getPassword(), completion: { (user, error) in
+            
+            if error != nil{
+                print("Atenção dados incorretos, verifique e tente novamente")
+            }else{
+                if user == nil{
+                    print("Tivemos um problema inesperado, tente novamente mais tarde")
+                }else {
+                    print("Parabens, usuário logado com sucesso")
+                }
+            }
+        })
+        
     }
     
     func actionRegisterButton() {

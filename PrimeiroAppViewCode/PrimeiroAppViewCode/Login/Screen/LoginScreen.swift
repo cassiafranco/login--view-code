@@ -35,6 +35,7 @@ class LoginScreen: UIView {
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
         view.isSecureTextEntry = true
+        view.textAlignment = .center
         return view
     }()
     
@@ -47,6 +48,7 @@ class LoginScreen: UIView {
         view.autocorrectionType = .no
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
+        view.textAlignment = .center
         return view
     }()
     
@@ -64,7 +66,6 @@ class LoginScreen: UIView {
     
     lazy var registerButton: UIButton = {
         let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Não tem conta? Cadastrar-se", for: .normal)
         view.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         view.setTitleColor(.white, for: .normal)
@@ -88,6 +89,13 @@ class LoginScreen: UIView {
             self.textFieldPassword.layer.borderColor = UIColor.lightText.cgColor
             self.textFieldPassword.borderStyle = .roundedRect
         }
+    }
+    //MARK: - Actions get Text
+    public func getEmail() -> String {
+        return self.textFieldEmail.text ?? ""
+    }
+    public func getPassword() -> String {
+        return self.textFieldPassword.text ?? ""
     }
     
     

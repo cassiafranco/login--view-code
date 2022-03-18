@@ -32,6 +32,7 @@ class RegisterScreen: UIView {
         view.borderStyle = .roundedRect
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
+        view.textAlignment = .center
         return view
     }()
     
@@ -46,7 +47,7 @@ class RegisterScreen: UIView {
         view.clearButtonMode = .whileEditing
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
-        
+        view.textAlignment = .center
         return view
     }()
     lazy var textFielPassword: UITextField = {
@@ -60,6 +61,7 @@ class RegisterScreen: UIView {
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
         view.isSecureTextEntry = true
+        view.textAlignment = .center
         return view
     }()
     lazy var registerButton: UIButton = {
@@ -108,13 +110,17 @@ class RegisterScreen: UIView {
     }
     
     //MARK: - Config delegate TextFields
-    
     public func configTextFieldDelegate(delegate: UITextFieldDelegate){
         self.textFielEmail.delegate = delegate
         self.textFielPassword.delegate = delegate
-        
     }
-    
+    //MARK: - Actions get Text
+    public func getEmail() -> String{
+        return self.textFielEmail.text ?? ""
+    }
+    public func getPassword() -> String{
+        return self.textFielPassword.text ?? ""
+    }
     //MARK: - SnapKit
     private func configImageConstraints() {
         self.imageView.snp.makeConstraints { (make) in
