@@ -23,6 +23,15 @@ class RegisterScreen: UIView {
         view.contentMode = .scaleAspectFit
         return view
     }()
+    lazy var textFieldName: UITextField = {
+        let view = UITextField()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Name"
+        view.borderStyle = .roundedRect
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.textColor = .darkGray
+        return view
+    }()
     
     lazy var textFielEmail: UITextField = {
         let view = UITextField()
@@ -72,6 +81,7 @@ class RegisterScreen: UIView {
         self.configEmailConstraints()
         self.configPasswordConstraints()
         self.configRegisterConstraints()
+        self.configNameConstraints()
         //-------------------------
     }
     
@@ -84,6 +94,7 @@ class RegisterScreen: UIView {
         self.addSubview(self.textFielEmail)
         self.addSubview(self.textFielPassword)
         self.addSubview(self.registerButton)
+        self.addSubview(self.textFieldName)
         
     }
     //MARK: - Actions of Buttons
@@ -108,9 +119,17 @@ class RegisterScreen: UIView {
             make.height.width.equalTo(150)
         }
     }
-    func configEmailConstraints(){
-        self.textFielEmail.snp.makeConstraints{ (make) in
+    func configNameConstraints() {
+        self.textFieldName.snp.makeConstraints{ (make) in
             make.top.equalTo(self.imageView.snp.bottom).offset(15)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(45)
+        }
+    }
+    func configEmailConstraints() {
+        self.textFielEmail.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.textFieldName.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(45)
