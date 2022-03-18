@@ -20,7 +20,6 @@ class LoginScreen: UIView {
     //MARK: - Create elements
     lazy var logoAppImageView: UIImageView = {
         let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "logo")
         view.contentMode = .scaleAspectFit
         return view
@@ -28,7 +27,6 @@ class LoginScreen: UIView {
     
     lazy var textFieldPassword: UITextField = {
         let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Password"
         view.keyboardType = .default
         view.backgroundColor = .white
@@ -36,12 +34,12 @@ class LoginScreen: UIView {
         view.autocorrectionType = .no
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
+        view.isSecureTextEntry = true
         return view
     }()
     
     lazy var textFieldEmail: UITextField = {
         let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "E-mail Address"
         view.keyboardType = .emailAddress
         view.borderStyle = .roundedRect
@@ -54,7 +52,6 @@ class LoginScreen: UIView {
     
     lazy var loginButton: UIButton = {
         let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign in", for: .normal)
         view.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         view.setTitleColor(.white, for: .normal)
@@ -76,7 +73,6 @@ class LoginScreen: UIView {
     }()
     
     //MARK: - Methods Text Fiel isEmpty -
-    
     public func emailIsEmpty() {
         if self.textFieldEmail.text == "" {
             self.textFieldEmail.layer.borderColor = UIColor.red.cgColor

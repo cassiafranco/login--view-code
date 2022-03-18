@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     func valideTextField() {
         let email : String = self.loginScren?.textFieldEmail.text ?? ""
@@ -64,7 +64,6 @@ extension LoginVC: UITextFieldDelegate{
         switch textField {
         case self.loginScren?.textFieldEmail:
             self.loginScren?.emailIsEmpty()
-            
         case self.loginScren?.textFieldPassword:
             self.loginScren?.passwordIsEmpty()
             self.valideTextField()

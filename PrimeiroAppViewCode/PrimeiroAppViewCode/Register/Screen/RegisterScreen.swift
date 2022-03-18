@@ -18,14 +18,12 @@ class RegisterScreen: UIView {
     //MARK: - Create elements
     lazy var imageView: UIImageView = {
         let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "add")
         view.contentMode = .scaleAspectFit
         return view
     }()
     lazy var textFullName: UITextField = {
         let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Nome"
         view.autocorrectionType = .no
         view.backgroundColor = .white
@@ -39,7 +37,6 @@ class RegisterScreen: UIView {
     
     lazy var textFielEmail: UITextField = {
         let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.placeholder = "Insire seu e-mail"
         view.borderStyle = .roundedRect
@@ -54,7 +51,6 @@ class RegisterScreen: UIView {
     }()
     lazy var textFielPassword: UITextField = {
         let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.placeholder = "Insire uma senha"
         view.borderStyle = .roundedRect
@@ -63,6 +59,7 @@ class RegisterScreen: UIView {
         view.clearButtonMode = .whileEditing
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
+        view.isSecureTextEntry = true
         return view
     }()
     lazy var registerButton: UIButton = {
