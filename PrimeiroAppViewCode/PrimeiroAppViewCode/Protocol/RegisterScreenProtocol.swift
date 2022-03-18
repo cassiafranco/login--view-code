@@ -9,4 +9,5 @@
 protocol RegisterScreenProtocol: class{
     
     func actionRegisterButton()
+    func actionBackButton()
 }

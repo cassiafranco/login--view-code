@@ -23,10 +23,14 @@ class RegisterScreen: UIView {
         view.contentMode = .scaleAspectFit
         return view
     }()
-    lazy var textFieldName: UITextField = {
+    lazy var textFullName: UITextField = {
         let view = UITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.placeholder = "Name"
+        view.placeholder = "Nome"
+        view.autocorrectionType = .no
+        view.backgroundColor = .white
+        view.keyboardType = .default
+        view.clearButtonMode = .whileEditing
         view.borderStyle = .roundedRect
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
@@ -41,6 +45,8 @@ class RegisterScreen: UIView {
         view.borderStyle = .roundedRect
         view.autocorrectionType = .no
         view.keyboardType = .emailAddress
+        view.keyboardType = .default
+        view.clearButtonMode = .whileEditing
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
         
@@ -54,6 +60,7 @@ class RegisterScreen: UIView {
         view.borderStyle = .roundedRect
         view.keyboardType = .default
         view.autocorrectionType = .no
+        view.clearButtonMode = .whileEditing
         view.font = UIFont.systemFont(ofSize: 14)
         view.textColor = .darkGray
         return view
@@ -94,7 +101,7 @@ class RegisterScreen: UIView {
         self.addSubview(self.textFielEmail)
         self.addSubview(self.textFielPassword)
         self.addSubview(self.registerButton)
-        self.addSubview(self.textFieldName)
+        self.addSubview(self.textFullName)
         
     }
     //MARK: - Actions of Buttons
@@ -120,7 +127,7 @@ class RegisterScreen: UIView {
         }
     }
     func configNameConstraints() {
-        self.textFieldName.snp.makeConstraints{ (make) in
+        self.textFullName.snp.makeConstraints{ (make) in
             make.top.equalTo(self.imageView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
@@ -129,7 +136,7 @@ class RegisterScreen: UIView {
     }
     func configEmailConstraints() {
         self.textFielEmail.snp.makeConstraints{ (make) in
-            make.top.equalTo(self.textFieldName.snp.bottom).offset(15)
+            make.top.equalTo(self.textFullName.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(45)

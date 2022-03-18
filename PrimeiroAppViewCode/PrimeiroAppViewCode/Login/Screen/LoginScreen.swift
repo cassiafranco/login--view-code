@@ -75,6 +75,27 @@ class LoginScreen: UIView {
         return view
     }()
     
+    //MARK: - Methods Text Fiel isEmpty -
+    
+    public func emailIsEmpty() {
+        if self.textFieldEmail.text == "" {
+            self.textFieldEmail.layer.borderColor = UIColor.red.cgColor
+        }else {
+            self.textFieldEmail.layer.borderColor = UIColor.lightText.cgColor
+            self.textFieldEmail.borderStyle = .roundedRect
+        }
+    }
+    public func passwordIsEmpty() {
+        if self.textFieldPassword.text == "" {
+            self.textFieldPassword.layer.borderColor = UIColor.red.cgColor
+        }else {
+            self.textFieldPassword.layer.borderColor = UIColor.lightText.cgColor
+            self.textFieldPassword.borderStyle = .roundedRect
+        }
+    }
+    
+    
+    
     //MARK: - Super View Construction
     override init(frame: CGRect) {
         super.init(frame: frame)

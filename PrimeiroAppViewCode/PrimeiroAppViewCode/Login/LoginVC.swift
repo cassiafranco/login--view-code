@@ -25,6 +25,17 @@ class LoginVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    func valideTextField() {
+        let email : String = self.loginScren?.textFieldEmail.text ?? ""
+        let password: String = self.loginScren?.textFieldPassword.text ?? ""
+        
+        if !email.isEmpty && !password.isEmpty {
+            self.loginScren?.loginButton.setTitleColor(.white, for: .normal)
+            self.loginScren?.loginButton.isEnabled = true
+        }else {
+            self.loginScren?.loginButton.isEnabled = false
+        }
+    }
     
 }
 extension LoginVC: LoginScreenProtocol{
@@ -41,12 +52,30 @@ extension LoginVC: LoginScreenProtocol{
 }
 extension LoginVC: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.blue.cgColor
+        self.loginScren?.loginButton.setTitleColor(.lightGray, for: .normal)
+        self.loginScren?.loginButton.isEnabled = true
+        
+        self.loginScren?.loginButton.setTitleColor(.lightGray, for: .normal)
+        self.loginScren?.loginButton.isEnabled = true
+        
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case self.loginScren?.textFieldEmail:
+            self.loginScren?.emailIsEmpty()
+            
+        case self.loginScren?.textFieldPassword:
+            self.loginScren?.passwordIsEmpty()
+            self.valideTextField()
+        default:
+            break
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+        self.loginScren?.loginButton.setTitleColor(.white, for: .normal)
+        self.loginScren?.loginButton.isEnabled = true
         return true
     }
 }
