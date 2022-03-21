@@ -13,5 +13,5 @@ struct CustomColor {
 struct CustomFont {
     static let popMedium = "Poppins-Medium"
     static let popBold = "Poppins-Bold"
-    static let popSemiBold = "Popping-SemiBold"
+    static let popSemiBold = "Poppins-SemiBold"
 }

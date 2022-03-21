@@ -53,6 +53,9 @@
 		A4D86F912720612200633CBD /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A4D86F94272065F000633CBD /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		A4D9502E272453B800368014 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		A4EB34AE27E8A40600E407AF /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		A4EB34AF27E8A42300E407AF /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		A4EB34B027E8A44A00E407AF /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		CDC2233AE379A6FAB617A4C9 /* Pods-PrimeiroAppViewCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeiroAppViewCode.debug.xcconfig"; path = "Target Support Files/Pods-PrimeiroAppViewCode/Pods-PrimeiroAppViewCode.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,8 +208,19 @@
 				A4942C6D27E5264A0071FDFE /* UIView.swift */,
 				A4942C6F27E526630071FDFE /* String.swift */,
 				A4942C7127E526990071FDFE /* Button.swift */,
+				A4EB34AD27E8A3E000E407AF /* Fonts */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A4EB34AD27E8A3E000E407AF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34B027E8A44A00E407AF /* Poppins-Bold.ttf */,
+				A4EB34AF27E8A42300E407AF /* Poppins-SemiBold.ttf */,
+				A4EB34AE27E8A40600E407AF /* Poppins-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F4976C813D2C3037F099E18F /* Pods */ = {
