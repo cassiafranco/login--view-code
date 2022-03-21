@@ -27,6 +27,9 @@
 		A4D86F922720612200633CBD /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F912720612200633CBD /* UserDetailTableViewCell.swift */; };
 		A4D86F95272065F000633CBD /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D86F94272065F000633CBD /* UserDetailView.swift */; };
 		A4D9502F272453B800368014 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9502E272453B800368014 /* CustomColor.swift */; };
+		A4EB34B627E8C41000E407AF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB34B527E8C41000E407AF /* HomeVC.swift */; };
+		A4EB34BA27E8C48500E407AF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB34B927E8C48500E407AF /* HomeScreen.swift */; };
+		A4EB34BE27E8C6C900E407AF /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB34BD27E8C6C900E407AF /* NavView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		A4EB34AE27E8A40600E407AF /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		A4EB34AF27E8A42300E407AF /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		A4EB34B027E8A44A00E407AF /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A4EB34B527E8C41000E407AF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A4EB34B927E8C48500E407AF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		A4EB34BD27E8C6C900E407AF /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		CDC2233AE379A6FAB617A4C9 /* Pods-PrimeiroAppViewCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeiroAppViewCode.debug.xcconfig"; path = "Target Support Files/Pods-PrimeiroAppViewCode/Pods-PrimeiroAppViewCode.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +106,9 @@
 		A407F305271B8D2C00F87D84 /* PrimeiroAppViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				A4EB34BB27E8C69800E407AF /* CustomElement */,
 				A4D9502D272453A300368014 /* Utils */,
+				A4EB34B227E8C3DB00E407AF /* Home */,
 				A4D86F89272056B500633CBD /* UserDetail */,
 				A4D59D67271E282A0074578F /* Protocol */,
 				A4D59D69271E2FF50074578F /* Register */,
@@ -118,8 +126,8 @@
 		A407F31A271B942C00F87D84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A4EB34B727E8C42600E407AF /* Controller */,
 				A407F31B271B94E500F87D84 /* Screen */,
-				A407F30A271B8D2C00F87D84 /* LoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -144,8 +152,8 @@
 		A4D59D69271E2FF50074578F /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				A4EB34B827E8C44300E407AF /* Controller */,
 				A4D59D6C271E31260074578F /* Screen */,
-				A4D59D6A271E31180074578F /* RegisterVC.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -161,9 +169,9 @@
 		A4D86F89272056B500633CBD /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A4D86F90272060E400633CBD /* Cell */,
-				A4D86F8D2720592900633CBD /* Screen */,
 				A4D86F8A272056EC00633CBD /* Controller */,
+				A4D86F8D2720592900633CBD /* Screen */,
+				A4D86F90272060E400633CBD /* Cell */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -221,6 +229,63 @@
 				A4EB34AE27E8A40600E407AF /* Poppins-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A4EB34B227E8C3DB00E407AF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34B327E8C3E200E407AF /* Controller */,
+				A4EB34B427E8C3EA00E407AF /* Screen */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A4EB34B327E8C3E200E407AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34B527E8C41000E407AF /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4EB34B427E8C3EA00E407AF /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34B927E8C48500E407AF /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		A4EB34B727E8C42600E407AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A407F30A271B8D2C00F87D84 /* LoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4EB34B827E8C44300E407AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4D59D6A271E31180074578F /* RegisterVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4EB34BB27E8C69800E407AF /* CustomElement */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34BC27E8C6A800E407AF /* NavView */,
+			);
+			path = CustomElement;
+			sourceTree = "<group>";
+		};
+		A4EB34BC27E8C6A800E407AF /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+				A4EB34BD27E8C6C900E407AF /* NavView.swift */,
+			);
+			path = NavView;
 			sourceTree = "<group>";
 		};
 		F4976C813D2C3037F099E18F /* Pods */ = {
@@ -351,6 +416,7 @@
 				A407F31D271B966A00F87D84 /* LoginScreen.swift in Sources */,
 				A4942C7227E526990071FDFE /* Button.swift in Sources */,
 				A407F307271B8D2C00F87D84 /* AppDelegate.swift in Sources */,
+				A4EB34B627E8C41000E407AF /* HomeVC.swift in Sources */,
 				A4D9502F272453B800368014 /* CustomColor.swift in Sources */,
 				A4D86F95272065F000633CBD /* UserDetailView.swift in Sources */,
 				A4D59D6F271E31540074578F /* RegisterScreen.swift in Sources */,
@@ -359,6 +425,8 @@
 				A407F309271B8D2C00F87D84 /* SceneDelegate.swift in Sources */,
 				A4942C6E27E5264A0071FDFE /* UIView.swift in Sources */,
 				A4D86F8F2720594700633CBD /* UserDetailScreen.swift in Sources */,
+				A4EB34BA27E8C48500E407AF /* HomeScreen.swift in Sources */,
+				A4EB34BE27E8C6C900E407AF /* NavView.swift in Sources */,
 				A4942C7027E526630071FDFE /* String.swift in Sources */,
 				A4D59D71271E33370074578F /* RegisterScreenProtocol.swift in Sources */,
 				A4D59D66271E27C70074578F /* LoginScreenProtocol.swift in Sources */,

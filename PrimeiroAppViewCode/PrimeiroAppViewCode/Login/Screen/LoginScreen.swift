@@ -103,7 +103,7 @@ class LoginScreen: UIView {
     //MARK: - Super View Construction
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.greenBackground
+        self.backgroundColor = CustomColor.greenBackground
         self.setUpSubViews()
         
         //------------------##--------------------

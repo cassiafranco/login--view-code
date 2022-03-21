@@ -23,7 +23,7 @@ class UserDetailScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.tableSubViews()
-        self.backgroundColor = UIColor.greenBackground
+        self.backgroundColor =  CustomColor.greenBackground
         self.configTableViewContraints()
         
     }

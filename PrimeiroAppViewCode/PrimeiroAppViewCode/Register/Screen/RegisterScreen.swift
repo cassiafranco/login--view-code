@@ -81,7 +81,7 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.getUpSubViews()
-        self.backgroundColor = UIColor.greenBackground
+        self.backgroundColor = CustomColor.greenBackground
         //-------------------------
         self.configImageConstraints()
         self.configEmailConstraints()
