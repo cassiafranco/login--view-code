@@ -7,8 +7,14 @@
 
 import UIKit
 
-class NavView: UIView {
+class NavView: UIView, ViewConfiguration{
     
+    weak var delegate: NavViewProtocol?
+    
+    func delegate(delegate: NavViewProtocol) {
+        self.delegate = delegate
+    }
+    //MARK: - Create elements
     lazy var navBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -47,18 +53,74 @@ class NavView: UIView {
         view.backgroundColor = .blue
         return view
     }()
-
+    lazy var searchLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "SF Pro Text", size: 10)
+        label.text = "Digite aqui"
+        label.textColor = .gray
+        return label
+    }()
+    lazy var searchButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "search"), for: .normal)
+        
+        return button
+    }()
+    lazy var conversationButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "message")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .systemPink
+        button.addTarget(self, action: #selector(tappedConversationRegister), for: .touchUpInside)
+        return button
+    }()
+    lazy var contactButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "contacts")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(self.tappedContactButton), for: .touchUpInside)
+        return button
+    }()
+    
+    //MARK: - Action of button
+    @objc func tappedConversationRegister () {
+        self.delegate?.typeScreenMessage(type: .conversation)
+        self.conversationButton.tintColor = .systemPink
+        self.contactButton.tintColor = .black
+        
+    }
+    @objc func tappedContactButton (){
+        self.delegate?.typeScreenMessage(type: .contact)
+        self.contactButton.tintColor = .systemPink
+        self.conversationButton.tintColor = .black
+        
+    }
+ 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addNewSubview()
+        self.setupViews()
         self.setupConstraints()
     }
+    func configViews() {
+        
+    }
     
-    private func addNewSubview() {
+    func buildViews() {
+        
+    }
+    
+    func setupViews() {
         self.addSubview(self.navBackgroundView)
         self.navBackgroundView.addSubview(self.navBar)
         self.navBar.addSubview(self.searchBar)
         self.navBar.addSubview(self.stackView)
+        self.stackView.addSubview(self.conversationButton)
+        self.stackView.addSubview(self.contactButton)
+        self.searchBar.addSubview(self.searchLabel)
+        self.searchBar.addSubview(self.searchButton)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
