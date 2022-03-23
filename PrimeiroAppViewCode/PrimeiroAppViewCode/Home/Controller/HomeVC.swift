@@ -11,10 +11,16 @@ class HomeVC: UIViewController {
     
     var homeScreen: HomeScreen?
     
+    private var loading : LoadingView = {
+        let loading = LoadingView()
+        
+        return loading
+    }()
     
     override func loadView() {
-        self.homeScreen = HomeScreen()
-        self.view = self.homeScreen
+//        self.homeScreen = HomeScreen()
+//        self.view = self.homeScreen
+        self.view = self.loading
     }
 
     override func viewDidLoad() {
