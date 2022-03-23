@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+protocol ViewConfiguration {
+    func setupViews()
+    func configViews()
+    func buildViews()
+    func setupConstraints()
+}
+
+extension ViewConfiguration {
+    func setupViews() {
+         configViews()
+         buildViews()
+         setupConstraints()
+    }
+}

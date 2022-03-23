@@ -12,7 +12,7 @@ class LoginScreen: UIView {
     
     weak var delegate: LoginScreenProtocol?
     
-    func delegate(delegate: LoginScreenProtocol?) {
+    func delegate(delegate:  LoginScreenProtocol?) {
         self.delegate = delegate
     }
     
