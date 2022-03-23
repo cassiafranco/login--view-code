@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NavViewProtocol: class {
+protocol NavViewProtocol: AnyObject {
     func typeScreenMessage(type: TypeConversationOrContact)
 }
 enum TypeConversationOrContact{

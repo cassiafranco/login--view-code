@@ -6,7 +6,7 @@
 //
 
 
-protocol RegisterScreenProtocol: class{
+protocol RegisterScreenProtocol: AnyObject{
     func actionRegisterButton()
     func actionBackButton()
 }
