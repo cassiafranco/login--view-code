@@ -38,7 +38,7 @@ class NavView: UIView, ViewConfiguration{
     lazy var searchBar: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = CustomColor.appLight
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         
