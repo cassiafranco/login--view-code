@@ -18,7 +18,7 @@ class RegisterScreen: UIView {
     //MARK: - Create elements
     lazy var imageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "add")
+        view.image = UIImage(named: "user")
         view.contentMode = .scaleAspectFit
         return view
     }()
@@ -67,7 +67,7 @@ class RegisterScreen: UIView {
     lazy var registerButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 14/255, green: 62/255, blue: 218/255, alpha: 1.0)
         view.setTitle("Register", for: .normal)
         view.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         view.setTitleColor(.white, for: .application)
@@ -81,7 +81,7 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.getUpSubViews()
-        self.backgroundColor = CustomColor.greenBackground
+        self.backgroundColor = UIColor(red: 255/255, green: 189/255, blue: 230/255, alpha: 1.0)
         //-------------------------
         self.configImageConstraints()
         self.configEmailConstraints()

@@ -20,7 +20,7 @@ class LoginScreen: UIView {
     //MARK: - Create elements
     lazy var logoAppImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "logo")
+        view.image = UIImage(named: "comments")
         view.contentMode = .scaleAspectFit
         return view
     }()
@@ -59,7 +59,7 @@ class LoginScreen: UIView {
         view.setTitleColor(.white, for: .normal)
         view.clipsToBounds = true
         view.layer.cornerRadius = 7.5
-        view.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 14/255, green: 62/255, blue: 218/255, alpha: 1.0)
         view.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return view
     }()
@@ -103,7 +103,7 @@ class LoginScreen: UIView {
     //MARK: - Super View Construction
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = CustomColor.greenBackground
+        self.backgroundColor = UIColor(red: 255/255, green: 189/255, blue: 230/255, alpha: 1.0)
         self.setUpSubViews()
         
         //------------------##--------------------

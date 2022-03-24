@@ -158,8 +158,6 @@ class NavView: UIView, ViewConfiguration{
             self.searchLabel.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 25),
             self.searchLabel.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
             
-            
-            
             self.searchButton.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -20),
             self.searchButton.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
             self.searchButton.widthAnchor.constraint(equalToConstant: 20),
