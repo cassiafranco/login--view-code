@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserDetailVC: UIViewController {
+class UserDetailViewController: UIViewController {
     var userDetailScreen: UserDetailScreen?
     
     override func loadView() {
@@ -23,7 +23,7 @@ class UserDetailVC: UIViewController {
     
 }
 
-extension UserDetailVC: UITableViewDelegate,UITableViewDataSource{
+extension UserDetailViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

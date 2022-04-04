@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class RegisterVC: UIViewController{
+class RegisterViewController: UIViewController{
     
     var registerScreen: RegisterScreen?
     
@@ -29,7 +29,7 @@ class RegisterVC: UIViewController{
 
     }
 }
-extension RegisterVC: RegisterScreenProtocol{
+extension RegisterViewController: RegisterScreenProtocol{
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -50,7 +50,7 @@ extension RegisterVC: RegisterScreenProtocol{
     }
 
 }
-extension RegisterVC: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
     }
     

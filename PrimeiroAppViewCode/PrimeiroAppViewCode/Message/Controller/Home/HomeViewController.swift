@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeViewController: UIViewController {
     
     var homeScreen: HomeScreen?
 //

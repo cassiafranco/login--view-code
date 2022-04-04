@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     var loginScren: LoginScreen?
     var auth: Auth?
@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
     }
     
 }
-extension LoginVC: LoginScreenProtocol{
+extension LoginViewController: LoginScreenProtocol{
     func actionLoginButton() {
         
         guard let login = self.loginScren else { return }
@@ -62,12 +62,12 @@ extension LoginVC: LoginScreenProtocol{
     }
     
     func actionRegisterButton() {
-        let register = RegisterVC()
+        let register = RegisterViewController()
         self.navigationController?.pushViewController(register, animated: false)
     }
     
 }
-extension LoginVC: UITextFieldDelegate{
+extension LoginViewController: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue.cgColor
         self.loginScren?.loginButton.setTitleColor(.lightGray, for: .normal)
